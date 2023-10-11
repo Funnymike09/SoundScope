@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d32acff58b686d4d80b6c34fbc226e6, type: 3}
+  m_Name: orang
+  m_EditorClassIdentifier: 
+  HeavyStepThreshold: 0.7
+  Footsteps:
+  - {fileID: 8300000, guid: 9406fab79a9bad446aef46109d3dd0ca, type: 3}
+  - {fileID: 8300000, guid: cfd2a1c48edd3a847a6a1d8d9338f4ed, type: 3}
+  - {fileID: 8300000, guid: 4a682e9578811e04c83805ad92f42414, type: 3}
+  HeavyFootsteps: []
