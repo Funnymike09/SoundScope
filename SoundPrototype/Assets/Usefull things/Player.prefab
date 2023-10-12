@@ -185,6 +185,7 @@ Transform:
   m_Children:
   - {fileID: 6057435681377247702}
   - {fileID: 6057435682358906622}
+  - {fileID: 5835983964195633062}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -226,6 +227,7 @@ MonoBehaviour:
   gamepadRotateSmoothing: 1000
   Player: {fileID: 6057435682339233486}
   isGamepad: 1
+  shellParticle: {fileID: 3866636747859888365}
   P: {fileID: 6057435681377247700}
 --- !u!114 &6057435682339233474
 MonoBehaviour:
@@ -240,7 +242,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Actions: {fileID: -944628639613478452, guid: 6bc8e9a7f4f044b489bfe76625377e57, type: 3}
-  m_NotificationBehavior: 0
+  m_NotificationBehavior: 2
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
     m_PersistentCalls:
@@ -251,9 +253,53 @@ MonoBehaviour:
   m_ControlsChangedEvent:
     m_PersistentCalls:
       m_Calls: []
-  m_ActionEvents: []
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: Gamepad
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6057435682339233484}
+        m_TargetAssemblyTypeName: EasyPhysicsSurfaces.TwinstickMovment, Assembly-CSharp
+        m_MethodName: OnMove
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: babca15c-13df-4bce-9086-c841105a3062
+    m_ActionName: Control/move[/XInputControllerWindows/leftStick,/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6057435682339233484}
+        m_TargetAssemblyTypeName: EasyPhysicsSurfaces.TwinstickMovment, Assembly-CSharp
+        m_MethodName: OnAim
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 3dba79cd-20c6-44ac-907a-914a57b5ebbd
+    m_ActionName: Control/aim[/XInputControllerWindows/rightStick]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 7f20f54b-5c54-4fae-b23c-002b9ebd139e
+    m_ActionName: Control/Shoot[/XInputControllerWindows/rightShoulder]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 52085fca-1a85-4874-a199-99cc4e2e866d
+    m_ActionName: Control/disable[/XInputControllerWindows/dpad/left]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ec67773e-42cf-4c83-9fad-1ce14ab61d8e
+    m_ActionName: Control/enable[/XInputControllerWindows/dpad/right]
+  m_NeverAutoSwitchControlSchemes: 1
+  m_DefaultControlScheme: 
   m_DefaultActionMap: Control
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
@@ -1015,3 +1061,102 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!1 &8733202661068128895
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5835983964195633062}
+  m_Layer: 0
+  m_Name: bulletDropOut
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5835983964195633062
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8733202661068128895}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 3866636747859888366}
+  m_Father: {fileID: 6057435682339233485}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &3213471240622881030
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 5835983964195633062}
+    m_Modifications:
+    - target: {fileID: 1815380230696316949, guid: d751d80c930b963469843db9d059791d, type: 3}
+      propertyPath: m_Name
+      value: Particle System
+      objectReference: {fileID: 0}
+    - target: {fileID: 1815380230696317416, guid: d751d80c930b963469843db9d059791d, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1815380230696317416, guid: d751d80c930b963469843db9d059791d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.049999952
+      objectReference: {fileID: 0}
+    - target: {fileID: 1815380230696317416, guid: d751d80c930b963469843db9d059791d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.28999996
+      objectReference: {fileID: 0}
+    - target: {fileID: 1815380230696317416, guid: d751d80c930b963469843db9d059791d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.049999237
+      objectReference: {fileID: 0}
+    - target: {fileID: 1815380230696317416, guid: d751d80c930b963469843db9d059791d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.64744323
+      objectReference: {fileID: 0}
+    - target: {fileID: 1815380230696317416, guid: d751d80c930b963469843db9d059791d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.24236459
+      objectReference: {fileID: 0}
+    - target: {fileID: 1815380230696317416, guid: d751d80c930b963469843db9d059791d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.22897315
+      objectReference: {fileID: 0}
+    - target: {fileID: 1815380230696317416, guid: d751d80c930b963469843db9d059791d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.6853087
+      objectReference: {fileID: 0}
+    - target: {fileID: 1815380230696317416, guid: d751d80c930b963469843db9d059791d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -38.878
+      objectReference: {fileID: 0}
+    - target: {fileID: 1815380230696317416, guid: d751d80c930b963469843db9d059791d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -2.628
+      objectReference: {fileID: 0}
+    - target: {fileID: 1815380230696317416, guid: d751d80c930b963469843db9d059791d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 94.182
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d751d80c930b963469843db9d059791d, type: 3}
+--- !u!198 &3866636747859888365 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 1815380230696317419, guid: d751d80c930b963469843db9d059791d, type: 3}
+  m_PrefabInstance: {fileID: 3213471240622881030}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &3866636747859888366 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1815380230696317416, guid: d751d80c930b963469843db9d059791d, type: 3}
+  m_PrefabInstance: {fileID: 3213471240622881030}
+  m_PrefabAsset: {fileID: 0}

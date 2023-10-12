@@ -25,7 +25,7 @@ namespace EasyPhysicsSurfaces
         [SerializeField] private bool isGamepad;
 
         private CharacterController controller;
-        private ParticleSystem shellParticle;
+        public ParticleSystem shellParticle;
 
         private AudioSource m_audioSource;
         private bool m_sprint;
@@ -144,7 +144,18 @@ namespace EasyPhysicsSurfaces
             }
         }
 
-        
+       public void OnMove(InputAction.CallbackContext context)
+        {
+            movement = context.ReadValue<Vector2>();
+        }
+
+       public void OnAim(InputAction.CallbackContext context)
+        {
+            aim = context.ReadValue<Vector2>();
+        }
+
+
+
         private void UpdateSteps()
         {
             Vector3 move = new Vector3(movement.x, 0, movement.y);
