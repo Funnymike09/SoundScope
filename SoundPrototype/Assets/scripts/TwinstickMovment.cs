@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using CodeMonkey.HealthSystemCM;
+
 
 namespace EasyPhysicsSurfaces
 {
@@ -32,7 +32,6 @@ namespace EasyPhysicsSurfaces
         private float m_footstepDelay;
         private Vector2 movement;
         private Vector2 aim;
-        private HealthSystem healthSystem;
         public MeshRenderer P;
      //   private bool canShoot;
      //   public float delayInSeconds;
@@ -48,9 +47,6 @@ namespace EasyPhysicsSurfaces
             carContolls = new CarControlls();
             playerInput = GetComponent<PlayerInput>();
             m_audioSource = GetComponent<AudioSource>();
-            healthSystem = new HealthSystem(1);
-
-            healthSystem.OnDead += HealthSystem_OnDead;
         }
         private void OnEnable()
         {
@@ -60,16 +56,6 @@ namespace EasyPhysicsSurfaces
         private void OnDisable()
         {
             carContolls.Disable();
-        }
-
-        public void Damage()
-        {
-            healthSystem.Damage(1);
-        }
-
-        private void HealthSystem_OnDead(object sender, System.EventArgs e)
-        {
-            Destroy(gameObject);
         }
 
         void Update()

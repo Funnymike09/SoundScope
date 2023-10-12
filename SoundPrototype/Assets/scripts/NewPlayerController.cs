@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using CodeMonkey.HealthSystemCM;
+
 
 namespace EasyPhysicsSurfaces
 {
@@ -20,6 +20,7 @@ namespace EasyPhysicsSurfaces
         [SerializeField] private GameObject Player;
         [SerializeField] private bool isGamepad;
         CharacterController controller;
+        
 
 
         // stuff
@@ -30,13 +31,16 @@ namespace EasyPhysicsSurfaces
         private float m_footstepDelay;
         private Vector2 movement;
         private Vector2 aim;
-        private HealthSystem healthSystem;
+        
         public MeshRenderer P;
         private Vector3 playerVelocity;
+        bool Shoot;
 
         private void Start()
         {
-            controller = GetComponent<CharacterController>();   
+            controller = GetComponent<CharacterController>();
+            m_audioSource = GetComponent<AudioSource>();
+
         }
 
         public void OnMove(InputAction.CallbackContext context)
@@ -49,7 +53,44 @@ namespace EasyPhysicsSurfaces
             aim = context.ReadValue<Vector2>();
         }
 
-        private void FixedUpdate()
+        public void OnShoot(InputAction.CallbackContext context)
+        {
+            if (context.phase == InputActionPhase.Performed && context.ReadValueAsButton())
+            {
+                Shoot = true;
+            }
+        }
+      
+        private void UpdateSteps()
+        {
+            Vector3 move = new Vector3(movement.x, 0, movement.y);
+
+            if (movement.magnitude > 0.1f)
+            {
+                if (m_footstepDelay > 0)
+                    m_footstepDelay -= Time.deltaTime;
+                else
+                {
+                    float maxSpeed = playerSpeed * 2.5f; // speed in sprint
+                    Footstep(movement.magnitude / maxSpeed);
+                }
+            }
+        }
+        private void Footstep(float force)
+        {
+            if (m_sprint)
+                m_footstepDelay = 0.3f;
+            else
+                m_footstepDelay = 0.6f;
+
+            if (Physics.Raycast(transform.position, Vector3.down, out RaycastHit hit, 2f))
+            {
+                if (hit.collider.TryGetComponent(out PhysicsSurfaceData physicsSurfaceData))
+                    m_audioSource.PlayOneShot(physicsSurfaceData.GetFootstepSound(force));
+            }
+        }
+
+        void Update()
         {
             //movment
             Vector3 move = new Vector3(movement.x, 0, movement.y);
@@ -75,9 +116,18 @@ namespace EasyPhysicsSurfaces
             gameObject.GetComponentInChildren<MeshRenderer>().enabled = true;
 
             //PlayerShoot
-            GameObject g = Instantiate(booblet, boobletDirection.position, boobletDirection.rotation);
-            g.SetActive(true);
-            shellParticle.Emit(count: 1);
+           if (Shoot)
+            {
+                GameObject g = Instantiate(booblet, boobletDirection.position, boobletDirection.rotation);
+                            g.SetActive(true);
+                            shellParticle.Emit(count: 1);
+                Shoot = false;
+                            
+            }
+
+            UpdateSteps();
+
+
         }
     }
 
