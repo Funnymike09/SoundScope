@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Booblet glow
+  m_Name: Booblet glow (blue
   m_Shader: {fileID: -6465566751694194690, guid: fb49574ccb3e8484dae0cec80c3bb21b, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -37,7 +37,7 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
-    - _Color: {r: 2, g: 0.13267934, b: 0, a: 0}
+    - _Color: {r: 0.014891624, g: 0, b: 2, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &8848988318031846143
 MonoBehaviour:

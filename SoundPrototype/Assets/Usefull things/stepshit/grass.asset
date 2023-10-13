@@ -14,10 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HeavyStepThreshold: 0.7
   Footsteps:
-  - {fileID: 8300000, guid: 8864b24d0bdd9744aa238bff91564b84, type: 3}
-  - {fileID: 8300000, guid: 587ac520ad6917b4ab0d2bc2fc248c99, type: 3}
-  - {fileID: 8300000, guid: 6c7e963dae508364cbee642175c72f68, type: 3}
-  - {fileID: 8300000, guid: 910c7cdeef065c3439e90dc2c926140e, type: 3}
+  - {fileID: 8300000, guid: c51143bdba56d424aa416b15ee67474f, type: 3}
+  - {fileID: 8300000, guid: a29e14e31a4146f4b92538c581c8ae6a, type: 3}
+  - {fileID: 8300000, guid: 99b9d8b91b42fe749a8125de71744a4a, type: 3}
   HeavyFootsteps:
   - {fileID: 8300000, guid: a6d61b7faf181a34c86aeef5eb0fa620, type: 3}
   - {fileID: 8300000, guid: 400e72d9a3d1e5640aea9c96cbd6d402, type: 3}
