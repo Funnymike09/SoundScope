@@ -24,7 +24,7 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Shoot",
+                    "name": "Shooter",
                     "type": "Button",
                     "id": "7f20f54b-5c54-4fae-b23c-002b9ebd139e",
                     "expectedControlType": "Button",
@@ -136,7 +136,18 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Shoot",
+                    "action": "Shooter",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6b60861d-5f89-4436-a9da-aec5f93cdfd0",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyBoard",
+                    "action": "Shooter",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

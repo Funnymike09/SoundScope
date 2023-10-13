@@ -36,7 +36,7 @@ namespace EasyPhysicsSurfaces
         
         public MeshRenderer P;
         private Vector3 playerVelocity;
-        bool Shoot;
+        bool Shoot = false;
 
         private void Start()
         {
@@ -54,7 +54,7 @@ namespace EasyPhysicsSurfaces
         {
             aim = context.ReadValue<Vector2>();
         }
-*/
+ 
         public void OnShoot(InputAction.CallbackContext context)
         {
             if (context.phase == InputActionPhase.Performed && context.ReadValueAsButton())
@@ -62,7 +62,7 @@ namespace EasyPhysicsSurfaces
                 Shoot = true;
             }
         }
-      
+     */
         public void Move(Vector2 direction)
         {
             movement = direction;
@@ -72,6 +72,12 @@ namespace EasyPhysicsSurfaces
         {
             aim = direction;
         }
+
+        public void Shooter(bool v)
+        {
+            Shoot = true; 
+        }
+
 
         private void UpdateSteps()
         {

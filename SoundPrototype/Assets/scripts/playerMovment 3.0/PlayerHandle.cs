@@ -20,17 +20,35 @@ public class PlayerHandle : MonoBehaviour
         playerController = playerControllers.FirstOrDefault(m=> m.GetPlayerIndex()  == Index);
         
     }
-
+     
+    
+    
+    
+    
+    
+    
+    
     public void OnMove(InputAction.CallbackContext context)
     {
-        playerController.Move(context.ReadValue<Vector2>());
+        if (playerController != null)
+            playerController.Move(context.ReadValue<Vector2>());
     }
 
     public void OnAim(InputAction.CallbackContext context)
     {
-        playerController.Aim(context.ReadValue<Vector2>());
+        if (playerController != null)
+            playerController.Aim(context.ReadValue<Vector2>());
     }
 
- 
+    public void OnShooter(InputAction.CallbackContext context)
+    {
+        if (playerController != null && context.performed)
+        {
+            playerController.Shooter(context.phase == InputActionPhase.Performed && context.ReadValueAsButton());
+        }
+    }
+
+
+
 
 }

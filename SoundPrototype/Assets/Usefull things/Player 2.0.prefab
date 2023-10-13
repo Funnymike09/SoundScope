@@ -162,8 +162,8 @@ GameObject:
   - component: {fileID: 6057435682339233474}
   - component: {fileID: 6057435682339233472}
   - component: {fileID: 4282573975050791531}
-  - component: {fileID: -7503334900150700624}
   - component: {fileID: -6035799991662927622}
+  - component: {fileID: 3565834871601786370}
   m_Layer: 0
   m_Name: Player 2.0
   m_TagString: Untagged
@@ -209,6 +209,7 @@ MonoBehaviour:
   gamepadRotateSmoothing: 1000
   Player: {fileID: 6057435682339233486}
   isGamepad: 1
+  playerIndex: 0
   shellParticle: {fileID: 3866636747859888365}
   P: {fileID: 6057435681377247700}
 --- !u!143 &6057435682339233475
@@ -453,20 +454,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &-7503334900150700624
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6057435682339233486}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 826f1b8b1f5d80b4c989abf8531a3f8b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerID: 0
-  startPos: {x: 0, y: 0, z: 0}
 --- !u!114 &-6035799991662927622
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -481,6 +468,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 0
   maxHealth: 1
+--- !u!114 &3565834871601786370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6057435682339233486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 628c0e61f2df46f46983c4276caa0f51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6057435682358906623
 GameObject:
   m_ObjectHideFlags: 0
