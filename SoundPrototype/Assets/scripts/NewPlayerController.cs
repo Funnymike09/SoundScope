@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http.Headers;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -37,6 +38,7 @@ namespace EasyPhysicsSurfaces
         public MeshRenderer P;
         private Vector3 playerVelocity;
         bool Shoot = false;
+        private bool canShooot = true;
 
         private void Start()
         {
@@ -111,7 +113,14 @@ namespace EasyPhysicsSurfaces
         {
             return playerIndex;
         }
-
+/*
+        IEnumerator CanShoot()
+        {
+            canShooot = false;
+            yield return new WaitForSeconds(1f);
+            canShoot = true;
+        }
+*/
        
 
 
@@ -141,7 +150,7 @@ namespace EasyPhysicsSurfaces
             gameObject.GetComponentInChildren<MeshRenderer>().enabled = true;
 
             //PlayerShoot
-           if (Shoot)
+           if (Shoot )
             {
                 GameObject g = Instantiate(booblet, boobletDirection.position, boobletDirection.rotation);
                             g.SetActive(true);
