@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -19,6 +20,7 @@ namespace EasyPhysicsSurfaces
         [SerializeField] private float gamepadRotateSmoothing = 1000f;
         [SerializeField] private GameObject Player;
         [SerializeField] private bool isGamepad;
+        [SerializeField] private int playerIndex = 0;
         CharacterController controller;
         
 
@@ -42,7 +44,7 @@ namespace EasyPhysicsSurfaces
             m_audioSource = GetComponent<AudioSource>();
 
         }
-
+/*
         public void OnMove(InputAction.CallbackContext context)
         {
             movement = context.ReadValue<Vector2>();
@@ -52,7 +54,7 @@ namespace EasyPhysicsSurfaces
         {
             aim = context.ReadValue<Vector2>();
         }
-
+*/
         public void OnShoot(InputAction.CallbackContext context)
         {
             if (context.phase == InputActionPhase.Performed && context.ReadValueAsButton())
@@ -61,6 +63,16 @@ namespace EasyPhysicsSurfaces
             }
         }
       
+        public void Move(Vector2 direction)
+        {
+            movement = direction;
+        }
+
+        public void Aim(Vector2 direction)
+        {
+            aim = direction;
+        }
+
         private void UpdateSteps()
         {
             Vector3 move = new Vector3(movement.x, 0, movement.y);
@@ -89,6 +101,13 @@ namespace EasyPhysicsSurfaces
                     m_audioSource.PlayOneShot(physicsSurfaceData.GetFootstepSound(force));
             }
         }
+        public int GetPlayerIndex()
+        {
+            return playerIndex;
+        }
+
+       
+
 
         void Update()
         {
