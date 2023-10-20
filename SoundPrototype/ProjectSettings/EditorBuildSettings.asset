@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/SetUp.unity
+    guid: 86c43c866da2f494d8de81428ff09a1d
+  - enabled: 1
+    path: Assets/Scenes/Blackout/Blackout.unity
+    guid: df9e04403d0f79c43b725ebc35c031f2
   m_configObjects: {}

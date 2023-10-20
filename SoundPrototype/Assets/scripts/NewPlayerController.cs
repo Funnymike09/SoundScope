@@ -21,7 +21,6 @@ namespace EasyPhysicsSurfaces
         [SerializeField] private float gamepadRotateSmoothing = 1000f;
         [SerializeField] private GameObject Player;
         [SerializeField] private bool isGamepad;
-        [SerializeField] private int playerIndex = 0;
         CharacterController controller;
         
 
@@ -108,10 +107,6 @@ namespace EasyPhysicsSurfaces
                 if (hit.collider.TryGetComponent(out PhysicsSurfaceData physicsSurfaceData))
                     m_audioSource.PlayOneShot(physicsSurfaceData.GetFootstepSound(force));
             }
-        }
-        public int GetPlayerIndex()
-        {
-            return playerIndex;
         }
 /*
         IEnumerator CanShoot()

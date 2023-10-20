@@ -22,20 +22,23 @@ public class PlayerConfigurationManager : MonoBehaviour
         else
         {
             Instance = this;
-            DontDestroyOnLoad(Instance);
+            
             playerConfigs = new List<PlayerConfiguration>();
         }
 
     }
 
-    public void HandlePlayerJoin(PlayerInput pi)
+   public void HandlePlayerJoin(PlayerInput pi)
     {
-        Debug.Log("player joined " + pi.playerIndex);
-        pi.transform.SetParent(transform);
-
+        Debug.Log("Player " + pi.playerIndex + " joined");
         if (!playerConfigs.Any(p => p.PlayerIndex == pi.playerIndex))
         {
+            pi.transform.SetParent(transform);
             playerConfigs.Add(new PlayerConfiguration(pi));
+            foreach(SpawnplayerSetUp menu in FindObjectsOfType<SpawnplayerSetUp>())
+            {
+                menu.StartCoroutine("WillResetModule");
+            }
         }
     }
 
@@ -54,7 +57,7 @@ public class PlayerConfigurationManager : MonoBehaviour
         playerConfigs[index].isReady = true;
         if (playerConfigs.Count == MaxPlayers && playerConfigs.All(p => p.isReady == true))
         {
-            SceneManager.LoadScene("SampleScene");
+            SceneManager.LoadScene("Blackout");
         }
     }
 }

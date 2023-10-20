@@ -9,25 +9,35 @@ using static UnityEngine.InputSystem.InputAction;
 
 public class PlayerHandle : MonoBehaviour
 {
-    private PlayerInput playerInput;
+    private PlayerConfiguration playerConfig;
     private NewPlayerController playerController;
+    [SerializeField] private MeshRenderer playerMesh;
+
+    private CarControlls controls; 
 
     private void Awake()
     {
-        playerInput = GetComponent<PlayerInput>();
-        var Index = playerInput.playerIndex;
-        var playerControllers = FindObjectsOfType<NewPlayerController>();
-        playerController = playerControllers.FirstOrDefault(m=> m.GetPlayerIndex()  == Index);
-        
+
+        playerController = GetComponent<NewPlayerController>();   
+        controls = new CarControlls();
     }
      
-    
-    
-    
-    
-    
-    
-    
+    public void InitialisePlayer(PlayerConfiguration pc)
+    {
+        playerConfig = pc;
+        playerMesh.material = pc.playerMaterial;
+        playerConfig.Input.onActionTriggered += Input_onActionTriggered;
+        
+    }
+
+    private void Input_onActionTriggered(CallbackContext obj)
+    {
+        if (obj.action.name == controls.Control.move.name) 
+        {
+            OnMove(obj);
+        }
+    }
+
     public void OnMove(InputAction.CallbackContext context)
     {
         if (playerController != null)

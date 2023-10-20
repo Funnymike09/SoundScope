@@ -10,16 +10,30 @@ public class SpawnplayerSetUp : MonoBehaviour
 
     private GameObject rootMenu;
     public PlayerInput input;
+    private InputSystemUIInputModule module = null;
 
     private void Awake()
     {
-        rootMenu = GameObject.Find("MainLayout");
+        var rootMenu = GameObject.Find("MainLayout");
         if (rootMenu != null)
         {
             var menu = Instantiate(playerSetupMenuPrefab, rootMenu.transform);
-            input.uiInputModule = menu.GetComponentInChildren<InputSystemUIInputModule>();
+            module = menu.GetComponentInChildren<InputSystemUIInputModule>();
+            input.uiInputModule = module;
             menu.GetComponent<SetUpController>().setPlayerIndex(input.playerIndex);
         }
+    }
+    public IEnumerator WillResetModule()
+    {
+        yield return new WaitForSeconds(0.25f);
+        StartCoroutine("ResetModule");
+    }
 
+    public IEnumerator ResetModule()
+    {
+        module.enabled = false;
+        yield return new WaitForSeconds(0.25f);
+        module.enabled = true;
     }
 }
+
