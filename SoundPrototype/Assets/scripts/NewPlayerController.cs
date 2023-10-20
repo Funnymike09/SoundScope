@@ -108,14 +108,14 @@ namespace EasyPhysicsSurfaces
                     m_audioSource.PlayOneShot(physicsSurfaceData.GetFootstepSound(force));
             }
         }
-/*
+
         IEnumerator CanShoot()
         {
             canShooot = false;
-            yield return new WaitForSeconds(1f);
-            canShoot = true;
+            yield return new WaitForSeconds(2f);
+            canShooot = true;
         }
-*/
+
        
 
 
@@ -145,12 +145,13 @@ namespace EasyPhysicsSurfaces
             gameObject.GetComponentInChildren<MeshRenderer>().enabled = true;
 
             //PlayerShoot
-           if (Shoot )
+            if (Shoot && canShooot)
             {
                 GameObject g = Instantiate(booblet, boobletDirection.position, boobletDirection.rotation);
                             g.SetActive(true);
                             shellParticle.Emit(count: 1);
                 Shoot = false;
+                StartCoroutine(CanShoot());
                             
             }
 

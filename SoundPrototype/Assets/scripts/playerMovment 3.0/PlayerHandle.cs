@@ -38,6 +38,16 @@ public class PlayerHandle : MonoBehaviour
         }
     }
 
+    private void OnEnable()
+    {
+        controls.Enable();
+    }
+
+    private void OnDisable()
+    {
+        controls.Disable();
+    }
+
     public void OnMove(InputAction.CallbackContext context)
     {
         if (playerController != null)
