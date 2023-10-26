@@ -5,37 +5,14 @@ using UnityEngine.InputSystem;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject[] spawnPoints;
-    //bruh
-    public static GameManager Instance = null;
-
-    private void Awake()
+    private SceneController controller;
+    private CarControlls controls;
+    public int pointPlayer1;
+    public int pointPlayer2;
+    void Start()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-        else if (Instance != null)
-        {
-            Destroy(gameObject);
-        }
-
-        spawnPoints = GameObject.FindGameObjectsWithTag("SpawnPoint");
-
+        pointPlayer1 = 0;
+        pointPlayer2 = 0;
     }
 
-    private void Start()
-    {
-        PlayerInputManager.instance.JoinPlayer(0, -1, null);
-    }
-
-    private void OnPlayerJoined(PlayerInput playerInput)
-    {
-        Debug.Log("bruh");
-    }
-
-    private void OnPlayerLeft(PlayerInput playerInput)
-    {
-
-    }
 }

@@ -8,9 +8,11 @@ using UnityEngine.InputSystem;
 public class DeeathScript : MonoBehaviour
 {
     public static event Action<DeeathScript> Killed;
+    public static Action<int> PlayerKilled = delegate { };
     [SerializeField] float health, maxHealth = 1f;
     private SceneController controller;
     private CarControlls controls;
+    public int playerIndex { get; }
 
     void Start()
     {
@@ -31,6 +33,7 @@ public class DeeathScript : MonoBehaviour
     }
     public void OnDestroy()
     {
+        PlayerKilled(playerIndex);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
