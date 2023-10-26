@@ -12,6 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Blackout/Blackout.unity
     guid: df9e04403d0f79c43b725ebc35c031f2
   - enabled: 1
-    path: Assets/Scenes/Blackout/CraftScene.unity
+    path: Assets/NeilFolder/Scenes/CraftScene.unity
     guid: 6a884f6ad78f132418d8aa7a2421f1fa
   m_configObjects: {}
