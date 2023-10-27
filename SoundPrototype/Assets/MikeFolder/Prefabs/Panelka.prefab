@@ -411,7 +411,7 @@ GameObject:
   m_Component:
   - component: {fileID: 281753356095395576}
   m_Layer: 5
-  m_Name: Side
+  m_Name: r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -906,7 +906,7 @@ RectTransform:
   m_GameObject: {fileID: 281753356756190479}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.70786923, z: 0.65882385}
+  m_LocalScale: {x: 0.69445, y: 0.9831596, z: 0.9150405}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 281753356095395576}
@@ -917,7 +917,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -2.4579926, y: 1.7405014}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &281753356756190704
