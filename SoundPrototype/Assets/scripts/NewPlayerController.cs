@@ -38,6 +38,7 @@ namespace EasyPhysicsSurfaces
         private Vector3 playerVelocity;
         bool Shoot = false;
         private bool canShooot = true;
+        public AudioClip GunShot;
 
         private void Start()
         {
@@ -107,6 +108,7 @@ namespace EasyPhysicsSurfaces
                 if (hit.collider.TryGetComponent(out PhysicsSurfaceData physicsSurfaceData))
                     m_audioSource.PlayOneShot(physicsSurfaceData.GetFootstepSound(force));
             }
+
         }
 
         IEnumerator CanShoot()
@@ -116,6 +118,10 @@ namespace EasyPhysicsSurfaces
             canShooot = true;
         }
 
+        private void ShotSound()
+        {
+            m_audioSource.PlayOneShot(GunShot);
+        }
        
 
 
@@ -150,6 +156,7 @@ namespace EasyPhysicsSurfaces
                 GameObject g = Instantiate(booblet, boobletDirection.position, boobletDirection.rotation);
                             g.SetActive(true);
                             shellParticle.Emit(count: 1);
+                ShotSound();
                 Shoot = false;
                 StartCoroutine(CanShoot());
                             

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,7 +9,8 @@ namespace EasyPhysicsSurfaces
 
     {
         [SerializeField] private float speed = 30f;
-
+        public static Action<int> PlayerKilled = delegate { };
+        public int playerIndex;
         IEnumerator DestroyBulletAfterTime()
         {
             yield return new WaitForSeconds(3);
@@ -24,6 +26,7 @@ namespace EasyPhysicsSurfaces
         {
             if(collision.gameObject.TryGetComponent<DeeathScript>(out DeeathScript deeathScriptComponent))
             {
+               // PlayerKilled(PlayerIndex);
                 deeathScriptComponent.TakeDamage(1);
             }
 

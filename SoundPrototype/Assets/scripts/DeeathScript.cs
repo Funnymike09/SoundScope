@@ -4,15 +4,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
+using OpenCover.Framework.Model;
 
 public class DeeathScript : MonoBehaviour
 {
     public static event Action<DeeathScript> Killed;
-    public static Action<int> PlayerKilled = delegate { };
+   // public static Action<int> PlayerKilled = delegate { };
+    public static Action Score = delegate { };
     [SerializeField] float health, maxHealth = 1f;
-    private SceneController controller;
-    private CarControlls controls;
-    public int playerIndex { get; }
+
+    public int PlayerIndex { get; private set; }
 
     void Start()
     {
@@ -26,14 +27,13 @@ public class DeeathScript : MonoBehaviour
         
         if (health <= 0f)
         {
-            Destroy(gameObject);
-            Killed?.Invoke(this);
+           // PlayerKilled(PlayerIndex);
+            Score();
+             Killed?.Invoke(this);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            
+            
             
         }
-    }
-    public void OnDestroy()
-    {
-        PlayerKilled(playerIndex);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

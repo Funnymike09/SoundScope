@@ -762,6 +762,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
+  playerIndex: 0
 --- !u!1 &5719892284625415961
 GameObject:
   m_ObjectHideFlags: 0
@@ -1070,6 +1071,7 @@ MonoBehaviour:
   isGamepad: 1
   shellParticle: {fileID: 3866636747859888365}
   P: {fileID: 6057435681377247700}
+  GunShot: {fileID: 8300000, guid: 607e1977086f86043bc8af9c3d6908c5, type: 3}
 --- !u!114 &851662922866204275
 MonoBehaviour:
   m_ObjectHideFlags: 0

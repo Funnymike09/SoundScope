@@ -21671,6 +21671,52 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &1889971466
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1889971468}
+  - component: {fileID: 1889971467}
+  m_Layer: 0
+  m_Name: ScoreCount
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1889971467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1889971466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f901401d5b21dac45a71b58c1581ffd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ScoreCountP1: {fileID: 1572289027}
+  ScoreCountP2: {fileID: 1359605200}
+--- !u!4 &1889971468
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1889971466}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 213.85103, y: 155.71628, z: -5.319336}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &1896689181
 Mesh:
   m_ObjectHideFlags: 0
@@ -24863,3 +24909,4 @@ SceneRoots:
   - {fileID: 640214383}
   - {fileID: 1416147917}
   - {fileID: 704229789}
+  - {fileID: 1889971468}
