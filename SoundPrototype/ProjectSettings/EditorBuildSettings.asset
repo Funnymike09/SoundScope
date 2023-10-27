@@ -18,12 +18,24 @@ EditorBuildSettings:
     path: Assets/MikeFolder/Scene doubles/Blackout 1.unity
     guid: 072cdd317da80854e9d1b29d0db0fecb
   - enabled: 1
-    path: Assets/MikeFolder/Scene doubles/Blackout 2.unity
-    guid: eae57b0888b3ad84bb048785e7be0b50
+    path: Assets/MikeFolder/Scene doubles/CraftScene 1.unity
+    guid: 3162d6ded5235b84285fc23a1901b72c
+  - enabled: 1
+    path: Assets/MikeFolder/Scene doubles/Blackout 4.unity
+    guid: bd92c4b7f752cfe468efae130e4b3eee
+  - enabled: 1
+    path: Assets/MikeFolder/Scene doubles/CraftScene 2.unity
+    guid: a5dbaf034fe617042b22b5395ea3716d
   - enabled: 1
     path: Assets/MikeFolder/Scene doubles/Blackout 3.unity
     guid: edb6820eaed8d7c428825f518e319ccd
   - enabled: 1
-    path: Assets/MikeFolder/Scene doubles/Blackout 4.unity
-    guid: bd92c4b7f752cfe468efae130e4b3eee
+    path: Assets/MikeFolder/Scene doubles/CraftScene 3.unity
+    guid: 6a9ae436e7d075741981ed612f66c92f
+  - enabled: 1
+    path: Assets/MikeFolder/Scene doubles/Blackout 2.unity
+    guid: eae57b0888b3ad84bb048785e7be0b50
+  - enabled: 1
+    path: Assets/MikeFolder/Scene doubles/CraftScene 4.unity
+    guid: 188ee1e2ae714c140a9e646e9c548d83
   m_configObjects: {}
