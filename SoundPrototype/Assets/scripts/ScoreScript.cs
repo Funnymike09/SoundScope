@@ -8,10 +8,11 @@ using UnityEngine.InputSystem;
 
 public class ScoreScript : MonoBehaviour
 {
+    
     [SerializeField] private TMP_Text ScoreCountP1, ScoreCountP2;
     private static int playerOneScore, playerTwoScore;
     public static ScoreScript instance;
-    public int PlayerIndex { get; private set; }
+    
     private void Start()
     {
         ScoreCountP1.SetText("P1 Score " + playerOneScore);
@@ -21,23 +22,23 @@ public class ScoreScript : MonoBehaviour
     }
     
 
-    private void UpdateScore()
+    private void UpdateScore(int pi)
     {
-        if (PlayerIndex == 0)
+        if (pi == 0)
         {
-            playerOneScore += 1;
+            playerTwoScore ++;
             ScoreCountP1.SetText("P1 Score " + playerOneScore);
         }
-        else if (PlayerIndex == 1)
+        else if (pi == 1)
         {
-            playerTwoScore += 1;
+            playerOneScore ++;
             ScoreCountP2.SetText("P2 Score " + playerTwoScore);
         }
     }
-   /*
+  
     private void OnDestroy()
     {
-        DeeathScript.PlayerKilled -= UpdateScore;
+        DeeathScript.Score -= UpdateScore;
     }
-   */
+   
 }

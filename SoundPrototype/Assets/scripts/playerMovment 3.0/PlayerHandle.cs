@@ -1,7 +1,7 @@
 using EasyPhysicsSurfaces;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.Burst.Intrinsics;
+using Unity.Burst;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -12,6 +12,7 @@ public class PlayerHandle : MonoBehaviour
     private PlayerConfiguration playerConfig;
     private NewPlayerController playerController;
     [SerializeField] private MeshRenderer playerMesh;
+    [SerializeField] private Renderer bloodSys;
 
     private CarControlls controls; 
 
@@ -26,6 +27,7 @@ public class PlayerHandle : MonoBehaviour
     {
         playerConfig = pc;
         playerMesh.material = pc.playerMaterial;
+        bloodSys.material = pc.playerMaterial;
         playerConfig.Input.onActionTriggered += Input_onActionTriggered;
         
     }

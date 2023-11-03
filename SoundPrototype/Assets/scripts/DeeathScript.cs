@@ -10,14 +10,18 @@ public class DeeathScript : MonoBehaviour
 {
     public static event Action<DeeathScript> Killed;
    // public static Action<int> PlayerKilled = delegate { };
-    public static Action Score = delegate { };
+    public static Action<int> Score = delegate { };
     [SerializeField] float health, maxHealth = 1f;
+    public PlayerInput input;
+    public ParticleSystem bloodParticle;
 
-    public int PlayerIndex { get; private set; }
+    private int playerIndex;
 
     void Start()
     {
         health = maxHealth;
+
+        getTheIndex(input.playerIndex);
          
     }
 
@@ -28,12 +32,17 @@ public class DeeathScript : MonoBehaviour
         if (health <= 0f)
         {
            // PlayerKilled(PlayerIndex);
-            Score();
+            Score(playerIndex);
              Killed?.Invoke(this);
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            bloodParticle.Play();
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             
             
             
         }
+    }
+    public void getTheIndex(int pi)
+    {
+        playerIndex = pi;
     }
 }
