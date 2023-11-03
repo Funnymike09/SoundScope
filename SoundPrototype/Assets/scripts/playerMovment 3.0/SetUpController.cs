@@ -41,11 +41,17 @@ public class SetUpController : MonoBehaviour
         if (!inputEnabled) { return; }
 
         PlayerConfigurationManager.Instance.SetPlayerColor(playerIndex, mat);
+
         readyPanel.SetActive(true);
         readyButton.interactable = true;
         menuPanel.SetActive(false);
         readyButton.Select();
 
+    }
+
+    public void SelectTextColor(Material mat)
+    {
+    PlayerConfigurationManager.Instance.SetTextColor(playerIndex, mat);
     }
 
     public void ReadyPlayer()

@@ -8,6 +8,8 @@ public class LevelInitializer : MonoBehaviour
     [SerializeField]
     private Transform[] PlayerSpawns;
 
+   // [SerializeField] private GameObject score;
+
     [SerializeField]
     private GameObject playerPrefab;
     // Start is called before the first frame update
@@ -18,6 +20,9 @@ public class LevelInitializer : MonoBehaviour
         {
             var player = Instantiate(playerPrefab, PlayerSpawns[i].position, PlayerSpawns[i].rotation, gameObject.transform);
             player.GetComponent<PlayerHandle>().InitialisePlayer(playerConfigs[i]);
+            //score.GetComponent<ScoreScript>().textColor(playerConfigs[i]);
+            
+
         }
 
     }

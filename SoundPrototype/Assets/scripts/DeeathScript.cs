@@ -14,6 +14,7 @@ public class DeeathScript : MonoBehaviour
     [SerializeField] float health, maxHealth = 1f;
     public PlayerInput input;
     public ParticleSystem bloodParticle;
+    [SerializeField] 
 
     private int playerIndex;
 
@@ -35,6 +36,8 @@ public class DeeathScript : MonoBehaviour
             Score(playerIndex);
              Killed?.Invoke(this);
             bloodParticle.Play();
+            
+            StartCoroutine(roundEnd());
             //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             
             
@@ -44,5 +47,11 @@ public class DeeathScript : MonoBehaviour
     public void getTheIndex(int pi)
     {
         playerIndex = pi;
+    }
+
+    public IEnumerator roundEnd()
+    {
+        yield return new WaitForSecondsRealtime(1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

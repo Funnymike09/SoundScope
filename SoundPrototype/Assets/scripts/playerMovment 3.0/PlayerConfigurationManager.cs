@@ -52,6 +52,10 @@ public class PlayerConfigurationManager : MonoBehaviour
         playerConfigs[index].playerMaterial = color;
     }
 
+    public void SetTextColor(int index, Material color)
+    {
+        playerConfigs[index].TextMaterial = color;
+    }
     public void ReadyPlayer(int index)
     {
         playerConfigs[index].isReady = true;
@@ -74,4 +78,5 @@ public class PlayerConfiguration
     public int PlayerIndex { get; private set; }
     public bool isReady { get; set; }
     public Material playerMaterial { get; set; }
+    public Material TextMaterial {  get; set; } 
 }

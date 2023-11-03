@@ -919,7 +919,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6057435681377247703}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -1334,9 +1334,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
-  maxHealth: 3
+  maxHealth: 1
   input: {fileID: 851662922866204275}
   bloodParticle: {fileID: 122662954927281267}
+  playerIndex: 0
 --- !u!114 &3565834871601786370
 MonoBehaviour:
   m_ObjectHideFlags: 0
