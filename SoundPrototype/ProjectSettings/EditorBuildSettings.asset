@@ -17,7 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/MikeFolder/Sceneouble/Blackout 1.unity
     guid: 2718232a6a742644eba8812b274fd195
-  - enabled: 1
+  - enabled: 0
     path: Assets/MikeFolder/Sceneouble/CraftScene2.unity
     guid: 557d470a748579941adc3d31f3b5e7a6
   m_configObjects: {}
